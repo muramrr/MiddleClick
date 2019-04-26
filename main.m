@@ -16,8 +16,8 @@ int main(int argc, char* argv[])
     [con start];
 
     // add traymenu
-    TrayMenu* menu = [[TrayMenu alloc] initWithController:con];
-    [app setDelegate:menu];
+//    TrayMenu* menu = [[TrayMenu alloc] initWithController:con];
+//    [app setDelegate:menu];
 
     [app run];
 
