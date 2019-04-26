@@ -159,7 +159,7 @@ BOOL wasThreeDown;
                                                       }];
 }
 
-/// Callback for system wake up. This restarts the app to initialize callbacks.
+// Callback for system wake up. This restarts the app to initialize callbacks.
 - (void)receiveWakeNote:(NSNotification*)note
 {
     [self scheduleRestart:10];
@@ -170,10 +170,12 @@ BOOL wasThreeDown;
     return needToClick;
 }
 
+//set event type (click or touched)
 - (void)setMode:(BOOL)click
 {
     [[NSUserDefaults standardUserDefaults] setBool:click forKey:@"need_to_click"];
-    needToClick = click;
+    needToClick = TRUE; //always click
+    //needToClick = click;
 }
 
 // listening to mouse clicks to replace them with middle clicks if there are 3
@@ -325,7 +327,5 @@ void displayReconfigurationCallBack(CGDirectDisplayID display, CGDisplayChangeSu
         [controller scheduleRestart:2];
     }
 }
-
-
 
 @end
